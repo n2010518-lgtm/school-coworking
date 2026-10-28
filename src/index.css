@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border border-white/40 dark:border-white/10;
+  }
+  .glass-card {
+    @apply bg-white/60 dark:bg-slate-800/60 backdrop-blur-lg border border-slate-200/60 dark:border-white/10;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-400 via-accent-400 to-teal-400 bg-clip-text text-transparent;
+  }
+  .bg-gradient-hero {
+    background: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.15), transparent 50%),
+                radial-gradient(ellipse at bottom right, rgba(16, 185, 129, 0.1), transparent 50%),
+                radial-gradient(ellipse at bottom left, rgba(20, 184, 166, 0.08), transparent 50%);
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .custom-range {
+    @apply appearance-none w-full h-2 rounded-full cursor-pointer;
+  }
+  .custom-range::-webkit-slider-thumb {
+    @apply appearance-none w-5 h-5 rounded-full bg-primary-500 border-2 border-white dark:border-slate-900 shadow-lg cursor-pointer transition-transform;
+  }
+  .custom-range::-webkit-slider-thumb:hover {
+    @apply scale-125;
+  }
+  .custom-range::-moz-range-thumb {
+    @apply w-5 h-5 rounded-full bg-primary-500 border-2 border-white dark:border-slate-900 shadow-lg cursor-pointer;
+  }
+}
